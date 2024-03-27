@@ -94,7 +94,7 @@ function Index() {
             }
         }
 
-        // lấy danh sách sảnh và hình ảnh
+        // lấy danh sách sảnh và hình ảnh 
         const fetchHome = async () => {
             try {
                 let homeResult = await axios.post(`${process.env.URL_BACKEND || 'http://10.8.103.27:3000'}/room/search`, {}, { timeout: 60000 });

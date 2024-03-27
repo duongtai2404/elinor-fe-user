@@ -1,0 +1,80 @@
+import React, { useState } from 'react';
+import { Container, Row, Col, Button, ListGroup, Accordion } from 'react-bootstrap';
+import numeral from 'numeral';
+
+
+function MenuButton({ item, onItemClick, active }) {
+    const [isDancing, setIsDancing] = useState(false);
+
+    const itemClick = (item) => {
+        onItemClick(item);
+        setIsDancing(true);
+        setTimeout(() => {
+            setIsDancing(false);
+        }, 1000);
+    }
+
+    const buttonStyle = {
+        color: 'white', // Màu chữ trắng
+        backgroundColor: '#dfa974', // Màu nền theo ý muốn của bạn
+        borderColor: '#dfa974', // Màu viền theo ý muốn của bạn
+        marginBottom: '10px'
+    };
+
+    const disableBtn = {
+        color: '#dfa974', // Màu chữ trắng
+        backgroundColor: 'transparent', // Màu nền theo ý muốn của bạn
+        borderColor: '#dfa974', // Màu viền theo ý muốn của bạn
+        marginBottom: '10px'
+    };
+
+    return (
+        <div style={{ marginBottom: '20px', padding: '10px', border: '0.2px solid', borderRadius: '7px', borderColor: '#dfa974', backgroundColor: 'white' }}>
+            <div className='justify-content-center' style={{ alignItems: 'center' }}>
+                <Button className={`button-menu-list ${isDancing ? 'special-transition' : ''}`} style={active ? buttonStyle : disableBtn}
+                    onClick={() => itemClick(item)}
+                >
+                    {item?.name} - {numeral(item?.price).format('0,0')} đ
+                </Button>
+            </div>
+            <ListGroup variant='flush' >
+                {item?.items.map((food, index) => (
+                    <ListGroup.Item key={index} style={{ fontSize: '12px' }}>{` - ${food?.name}`}</ListGroup.Item>
+                ))}
+            </ListGroup>
+        </div>
+    );
+}
+
+function MenuList({ data, selectedMenuItems }) {
+    const [selectedMenu, setSelectedMenu] = React.useState(null);
+
+    const handleMenuClick = (menu) => {
+        setSelectedMenu(menu);
+        selectedMenuItems(menu)
+    };
+
+    return (
+        <Container>
+            <Row className='justify-content-center'>
+                {data.map((item, index) => (
+                    <Col xs={6} md={6} sm={6} >
+                        <MenuButton key={index} item={item} active={selectedMenu?.id === item.id} onItemClick={handleMenuClick} />
+                    </Col>
+                ))}
+                {/* <Col>
+                    <h2>Selected Menu</h2>
+                    {selectedMenu && (
+                        <div>
+                            <h3>{selectedMenu.name} - ${selectedMenu.price}</h3>
+                            <h4>Available Foods:</h4>
+                            <FoodList foods={selectedMenu.foods} />
+                        </div>
+                    )}
+                </Col> */}
+            </Row>
+        </Container>
+    );
+}
+
+export default MenuList;

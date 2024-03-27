@@ -76,7 +76,7 @@ function Index() {
         // lấy danh sách menu 
         const fetchMenuList = async () => {
             try {
-                let menuResult = await axios.get(`${process.env.URL_BACKEND || 'http://10.8.103.27:3000'}/menu`, { timeout: 60000 });
+                let menuResult = await axios.get(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/menu`, { timeout: 60000 });
                 menuResult = menuResult?.data;
                 if (menuResult?.code === 1000) {
 
@@ -97,7 +97,7 @@ function Index() {
         // lấy danh sách sảnh và hình ảnh 
         const fetchHome = async () => {
             try {
-                let homeResult = await axios.post(`${process.env.URL_BACKEND || 'http://10.8.103.27:3000'}/room/search`, {}, { timeout: 60000 });
+                let homeResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/room/search`, {}, { timeout: 60000 });
                 homeResult = homeResult?.data;
                 if (homeResult?.code === 1000) {
                     const homeList = homeResult?.data?.rooms;

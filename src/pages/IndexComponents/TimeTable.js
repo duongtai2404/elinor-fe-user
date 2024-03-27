@@ -80,7 +80,7 @@ const TimeTable = ({ numPeople, onSelectedTimeSlot }) => {
                 to
             }
 
-            let response = await axios.post(`${process.env.URL_BACKEND || 'http://10.8.103.27:3000'}/room/checkAvailable`, data);
+            let response = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/room/checkAvailable`, data);
             response = response?.data
 
             if (response?.code === 1000) {

@@ -61,7 +61,7 @@ function Payment() {
     // query kết quả thanh toán
     const queryBooking = async (bookingId) => {
         try {
-            let response = await axios.post(`${process.env.URL_BACKEND || 'http://10.8.103.27:3000'}/booking/query`, { bookingId });
+            let response = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/booking/query`, { bookingId });
             response = response?.data
             if (response?.code === 1000) {
                 response = response?.data
@@ -144,7 +144,7 @@ function Payment() {
                     from: selectedTimeSlot?.from,
                     to: selectedTimeSlot?.to
                 }
-                let bookingResult = await axios.post(`${process.env.URL_BACKEND || 'http://10.8.103.27:3000'}/booking`, requestData, { timeout: 60000 });
+                let bookingResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/booking`, requestData, { timeout: 60000 });
                 // let bookingResult = {
                 //     data: {
                 //         code: 1000,

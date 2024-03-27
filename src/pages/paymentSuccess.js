@@ -88,12 +88,11 @@ function PaymentSuccess() {
 
               }}>✓</i>
             </div>
-            <p style={{ fontSize: '30px', fontWeight: 'bold' }}>Thanh toán thành công</p>
+            <p style={{ marginTop: '10px', fontSize: '30px', fontWeight: 'bold' }}>Đặt bàn thành công</p>
             <br />
             <p>
-              Thông tin đặt bàn, ngày, giờ, sảnh, hướng dẫn sử dụng dịch vụ
-              đã được gửi tới email <b>{userEmail}</b><br /> <span style={{ color: 'red', fontSize: '13px' }}>*Vui lòng check hộp thư nhận hoặc hộp thư spam để nhận mail hướng dẫn</span><br /> <br /> Cảm ơn bạn đã sử dụng dịch
-              vụ của chúng tôi!
+              Thông tin <span style={{ fontWeight: 'bold' }}>xác nhận đặt bàn thành công</span>đã
+              được gửi tới email <b>{userEmail}</b><br /> <span style={{ color: 'red', fontSize: '13px' }}>*Vui lòng kiểm tra hộp thư đến hoặc hộp thư spam để nhận những thông tin đặt bàn phục vụ cho bữa tối của bạn nhé.</span><br /> <br />
             </p>
           </div>
           {/* <UserInformationBooking changeUserInfo={changeUserInfo} checkIsValid={checkIsValid} /> */}

@@ -86,14 +86,17 @@ function Booking() {
             navigateToHome();
         }
 
+        setNumPeople(receivedData?.numPeople);
+        setSelectedMenu(receivedData?.selectedMenu);
+        setSelectedTimeSlot(receivedData?.selectedTimeSlot);
+        if (!_.isEmpty(receivedData?.userInfo)) {
+            setUserInfo(receivedData?.userInfo);
+        }
+
         // hiển thị loading khi init màn hình 
         setTimeout(() => {
             setIsVisible(false);
         }, 1000)
-
-        setNumPeople(receivedData?.numPeople);
-        setSelectedMenu(receivedData?.selectedMenu);
-        setSelectedTimeSlot(receivedData?.selectedTimeSlot);
 
     }, []);
 

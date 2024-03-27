@@ -7,22 +7,22 @@ import moment from 'moment';
 
 
 function ItemReview({ content }) {
-    const [isActive, setIsActive] = useState(false);
-    const myRef = useRef(null);
+    // const [isActive, setIsActive] = useState(false);
+    // const myRef = useRef(null);
     useEffect(() => {
-        const handleScroll = () => {
-            if (myRef.current) {
-                const top = myRef.current.getBoundingClientRect().top;
-                if (top < 300) setIsActive(true)
-                else setIsActive(false)
+        // const handleScroll = () => {
+        //     if (myRef.current) {
+        //         const top = myRef.current.getBoundingClientRect().top;
+        //         if (top < 300) setIsActive(true)
+        //         else setIsActive(false)
 
-            }
-        };
+        //     }
+        // };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        // window.addEventListener('scroll', handleScroll);
+        // return () => {
+        //     window.removeEventListener('scroll', handleScroll);
+        // };
     }, []);
     const fatherStyle = {
         minWidth: '1em',
@@ -42,7 +42,7 @@ function ItemReview({ content }) {
     }
 
     return (
-        <div ref={myRef} style={fatherStyle} className={`${isActive ? 'item-review-booking' : ''}`}>
+        <div style={fatherStyle} className={''}>
             <p style={childStyle}> {content}</p>
         </div>
     );

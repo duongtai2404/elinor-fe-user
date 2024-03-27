@@ -45,6 +45,9 @@ function Payment() {
     // tên sảnh
     const [roomName, setRoomName] = useState('');
 
+    // tên bàn
+    const [tableName, setTableName] = useState('');
+
     // thông tin thanh toán
     const [paymentInfo, setPaymentInfo] = useState({});
 
@@ -114,7 +117,7 @@ function Payment() {
 
         window.scrollTo(0, 0);
 
-        // chuyển về trang hom nếu không có data
+        // chuyển về trang home nếu không có data
         if (_.isEmpty(receivedData)) {
             navigateToHome();
         }
@@ -167,6 +170,7 @@ function Payment() {
                 if (bookingResult?.code === 1000) {
                     bookingResult = bookingResult?.data;
                     setRoomName(bookingResult?.roomName);
+                    setTableName(bookingResult?.tableName);
                     setPaymentInfo(_.pick(bookingResult, ['qrContent', 'bankInfo', 'bookingId', 'amount']));
                     intervalQueryBooking(bookingResult?.bookingId)
                 }
@@ -198,7 +202,13 @@ function Payment() {
             {/* header của payment */}
             <section className="hp-room-section" style={{ paddingTop: '20px' }} >
                 <div className="container-fluid">
-                    <HeaderPayment />
+                    <HeaderPayment
+                        numPeople={numPeople}
+                        selectedMenu={selectedMenu}
+                        selectedTimeSlot={selectedTimeSlot}
+                        userInfo={userInfo}
+                        paymentInfo={paymentInfo}
+                    />
                 </div>
             </section>
 
@@ -212,6 +222,7 @@ function Payment() {
                         userInfo={userInfo}
                         total={paymentInfo?.amount}
                         roomName={roomName}
+                        tableName={tableName}
                         changeActivePaymentInfo={changeActivePaymentInfo} />
                 </div>
             </section>

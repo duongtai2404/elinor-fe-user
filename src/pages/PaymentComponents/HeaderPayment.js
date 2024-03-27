@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
 import _ from 'lodash';
+import axios from 'axios';
 
 const theme = createTheme({
     palette: {
@@ -14,7 +15,7 @@ const theme = createTheme({
     },
 });
 
-function HeaderPayment({ }) {
+function HeaderPayment({ numPeople, selectedMenu, selectedTimeSlot, userInfo, paymentInfo }) {
     const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
@@ -38,11 +39,27 @@ function HeaderPayment({ }) {
         fontSize: '16px'
     };
 
-    const navigateToHome = () => {
+    const navigateToBooking = () => {
         try {
-            navigate('/', {});
+            // gọi hủy thanh toán
+            if (!_.isNil(paymentInfo?.bookingId)) {
+                deletePayment({ bookingId: paymentInfo?.bookingId });
+            }
+
+            navigate('/booking', { state: { data: { numPeople, selectedMenu, selectedTimeSlot, userInfo } } });
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    const deletePayment = async ({ bookingId }) => {
+        try {
+            const requestData = {
+                bookingId
+            }
+            let deletedResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/booking/delete`, requestData, { timeout: 60000 });
+        } catch (error) {
+            console.log(`ERROR when call delete booking ${error.message} -- ${JSON.stringify(error)}`);
         }
     }
 
@@ -58,7 +75,7 @@ function HeaderPayment({ }) {
                             onClick={handleShow}
                             startIcon={<KeyboardBackspaceOutlinedIcon />}
                         >
-                            Trang chủ
+                            Trở về
                         </Button>
                     </ThemeProvider>
                 </Col>
@@ -83,7 +100,7 @@ function HeaderPayment({ }) {
                     <Button autoFocus variant="secondary" style={buttonStyle} onClick={handleClose}>
                         Không
                     </Button>
-                    <Button variant="primary" style={buttonInActiveStyle} onClick={navigateToHome}>Có</Button>
+                    <Button variant="primary" style={buttonInActiveStyle} onClick={navigateToBooking}>Có</Button>
                 </Modal.Footer>
             </Modal>
         </Container>

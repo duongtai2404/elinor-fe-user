@@ -109,6 +109,18 @@ const TimeTable = ({ numPeople, onSelectedTimeSlot }) => {
                         time1: _.pick(data?.timeSlot?.[0], ['from', 'to', 'isAvailable', 'timeString']),
                         time2: _.pick(data?.timeSlot?.[1], ['from', 'to', 'isAvailable', 'timeString'])
                     };
+                    // xóa thời gian cũ đã chọn, trường hợp tăng số người lên và thời gian k thỏa điều kiện
+                    if (selectedTime && selectedTime.date === obj.date2) {
+                        if (selectedTime?.timeString === obj?.time1?.timeString && !obj?.time1?.isAvailable) {
+                            setSelectedTime({});
+                            onSelectedTimeSlot({});
+                        }
+
+                        if (selectedTime?.timeString === obj?.time2?.timeString && !obj?.time2?.isAvailable) {
+                            setSelectedTime({});
+                            onSelectedTimeSlot({});
+                        }
+                    }
                     newData.push(obj);
                 });
 

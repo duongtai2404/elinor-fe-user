@@ -76,7 +76,11 @@ function Index() {
         // lấy danh sách menu 
         const fetchMenuList = async () => {
             try {
-                let menuResult = await axios.get(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/menu`, { timeout: 60000 });
+                let menuResult = await axios.get(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/menu`, {
+                    headers: {
+                        'ngrok-skip-browser-warning': true
+                    }
+                }, { timeout: 60000 });
                 menuResult = menuResult?.data;
                 if (menuResult?.code === 1000) {
 

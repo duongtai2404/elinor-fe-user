@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import _ from 'lodash';
 
-function FormBooking({ changeUserInfo, checkIsValid }) {
+function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
     const [userInfo, setUserInfo] = useState({
         name: '',
         phone: '',
@@ -85,10 +85,16 @@ function FormBooking({ changeUserInfo, checkIsValid }) {
         // kiểm tra đã nhập đủ thông tin chưa
         let validUserInfo = _.pick(userInfo, ['email', 'name', 'phone'])
         validUserInfo = _.pickBy(validUserInfo, (value) => _.isEmpty(value));
-        if (_.isEmpty(validError) && _.isEmpty(validUserInfo)) checkIsValid(true);
+        if (_.isEmpty(validError) && _.isEmpty(validUserInfo)) {
+            checkIsValid(true)
+        } else {
+            checkIsValid(false)
+        };
     }
 
-
+    useEffect(() => {
+        setUserInfo(existUserInfo);
+    }, [existUserInfo]);
 
 
     return (
@@ -122,7 +128,7 @@ function FormBooking({ changeUserInfo, checkIsValid }) {
     );
 }
 
-function UserInformationBooking({ changeUserInfo, checkIsValid }) {
+function UserInformationBooking({ userInfo, changeUserInfo, checkIsValid }) {
     const containerStyle = {
         border: '2px solid #dfa974',
         borderRadius: '20px',
@@ -135,7 +141,7 @@ function UserInformationBooking({ changeUserInfo, checkIsValid }) {
                 <h3 className='protest-strike-regular' style={{ color: '' }} >Thông tin xác nhận đặt bàn</h3>
             </div>
             <div style={{ textAlign: 'left', color: 'white' }}>
-                <FormBooking changeUserInfo={changeUserInfo} checkIsValid={checkIsValid} />
+                <FormBooking existUserInfo={userInfo} changeUserInfo={changeUserInfo} checkIsValid={checkIsValid} />
                 {/* <ItemReview content='- Số người: 2' />
                 <ItemReview content='- Loại combo: Tên combo' />
                 <ItemReview content='- Thành tiền: 450,000 vnđ' /> */}

@@ -59,7 +59,7 @@ function GeneralInfo({ numPeople, selectedMenu, selectedTimeSlot, userInfo, tota
                     <p style={{ fontSize: '1em', color: isActive ? 'white' : '' }}><span style={{ fontWeight: 'bold' }}> <NavigateNextOutlinedIcon /> Sảnh: </span> {roomName}</p>
                     <p style={{ fontSize: '1em', color: isActive ? 'white' : '' }}><span style={{ fontWeight: 'bold' }}> <NavigateNextOutlinedIcon /> Bàn: </span> {tableName}</p>
                     <p style={{ fontSize: '1em', color: isActive ? 'white' : '' }}><span style={{ fontWeight: 'bold' }}> <NavigateNextOutlinedIcon /> Thời gian: </span> {`${moment(selectedTimeSlot?.from).format('DD/MM/YYYY')}  ${moment(selectedTimeSlot?.from).format('HH:mm')} - ${moment(selectedTimeSlot?.to).format('HH:mm')}`}</p>
-                    <p style={{ fontSize: '1em', color: isActive ? 'white' : '' }}><span style={{ fontWeight: 'bold' }}> <NavigateNextOutlinedIcon /> Set Menu: </span> `{`${numPeople} người - ${selectedMenu?.name}`}</p>
+                    <p style={{ fontSize: '1em', color: isActive ? 'white' : '' }}><span style={{ fontWeight: 'bold' }}> <NavigateNextOutlinedIcon /> Set Menu: </span> {`${numPeople} người - ${selectedMenu?.name}`}</p>
                     <p style={{ fontSize: '1em', color: isActive ? 'white' : '' }}><span style={{ fontWeight: 'bold' }}> <NavigateNextOutlinedIcon /> Tổng tiền: </span> {numeral(total).format('0,0')} vnđ</p>
                     {/* <MenuButton key={index} item={item} active={selectedMenu?.id === item.id} onItemClick={handleMenuClick} /> */}
                 </Col>

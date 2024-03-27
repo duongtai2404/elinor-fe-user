@@ -31,8 +31,6 @@ function PaymentSuccess() {
 
     window.scrollTo(0, 0);
 
-    console.log('received data', receivedData);
-
     // chuyển về trang homE nếu không có data
     if (_.isEmpty(receivedData) || _.isEmpty(receivedData?.email)) {
       navigateToHome();
@@ -56,18 +54,18 @@ function PaymentSuccess() {
         </div>
       )}
 
-      <section className="hp-room-section" style={{ paddingTop: '70px' }} >
+      <section className="hp-room-section" style={{ paddingTop: '50px' }} >
         <div className="container-fluid">
           <HeaderPaymentSuccess />
         </div>
       </section>
 
-      <section className="hp-room-section" style={{ paddingTop: '70px', paddingBottom: '40px' }}>
+      <section className="hp-room-section" style={{ paddingTop: '30px', paddingBottom: '20px' }}>
         <div className="container-fluid">
           <div
             style={{
               backgroundColor: 'white',
-              padding: '40px',
+              padding: '30px',
               borderRadius: '4px',
               margin: '0 auto',
               textAlign: 'center'
@@ -88,7 +86,7 @@ function PaymentSuccess() {
 
               }}>✓</i>
             </div>
-            <p style={{ marginTop: '10px', fontSize: '30px', fontWeight: 'bold' }}>Đặt bàn thành công</p>
+            <p className='protest-strike-regular' style={{ marginTop: '30px', fontSize: '30px' }}>Đặt bàn thành công</p>
             <br />
             <p>
               Thông tin <span style={{ fontWeight: 'bold' }}>xác nhận đặt bàn thành công</span>đã

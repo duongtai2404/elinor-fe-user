@@ -94,7 +94,7 @@ function HeaderPayment({ numPeople, selectedMenu, selectedTimeSlot, userInfo, pa
                 centered={true}
             >
                 <Modal.Body>
-                    Các thông tin thanh toán sẽ bị hủy. Bạn có chắc chắn muốn quay trở lại trang chủ
+                    Các thông tin thanh toán sẽ bị hủy. Bạn có chắc chắn muốn quay trở lại
                 </Modal.Body>
                 <Modal.Footer>
                     <Button autoFocus variant="secondary" style={buttonStyle} onClick={handleClose}>

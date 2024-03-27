@@ -56,6 +56,16 @@ function Booking() {
     const navigateToPayment = () => {
         try {
             if (!isValidInfo) return;
+
+            // kiểm tra thông tin user 1 lần nữa
+            const phoneRegex = /^(0[2-9]|84[2-9]|\+84[2-9])\d{8,9}$/;
+            const emailRegex = /^[a-zA-Z0-9._-]+@(gmail\.com|icloud\.com)$/;
+            const validUserInfo = _.pickBy(userInfo, (value) => _.isEmpty(value));
+            if (!_.isEmpty(validUserInfo) || !phoneRegex.test(userInfo?.phone) || !emailRegex.test(userInfo?.email)) {
+                setIsValidInfo(false);
+                return;
+            }
+
             navigate('/payment', { state: { data: { numPeople, selectedMenu, selectedTimeSlot, userInfo } } });
         } catch (error) {
             console.log(error);
@@ -91,6 +101,7 @@ function Booking() {
         setSelectedTimeSlot(receivedData?.selectedTimeSlot);
         if (!_.isEmpty(receivedData?.userInfo)) {
             setUserInfo(receivedData?.userInfo);
+            setIsValidInfo(true);
         }
 
         // hiển thị loading khi init màn hình 
@@ -98,7 +109,7 @@ function Booking() {
             setIsVisible(false);
         }, 1000)
 
-    }, []);
+    }, [receivedData]);
 
     return (
         <Fragment>
@@ -141,7 +152,7 @@ function Booking() {
             {/* Thông tin xác nhận đặt bàn */}
             <section className="hp-room-section" style={{ paddingTop: '40px' }}>
                 <div className="container-fluid">
-                    <UserInformationBooking changeUserInfo={changeUserInfo} checkIsValid={checkIsValid} />
+                    <UserInformationBooking userInfo={userInfo} changeUserInfo={changeUserInfo} checkIsValid={checkIsValid} />
                 </div>
             </section>
 

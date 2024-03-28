@@ -60,7 +60,7 @@ function Booking() {
             // kiểm tra thông tin user 1 lần nữa
             const phoneRegex = /^(0[2-9]|84[2-9]|\+84[2-9])\d{8,9}$/;
             const emailRegex = /^[a-zA-Z0-9._-]+@(gmail\.com|icloud\.com)$/;
-            const validUserInfo = _.pickBy(userInfo, (value) => _.isEmpty(value));
+            const validUserInfo = _.pickBy(_.omit(userInfo, ['note']), (value) => _.isEmpty(value));
             if (!_.isEmpty(validUserInfo) || !phoneRegex.test(userInfo?.phone) || !emailRegex.test(userInfo?.email)) {
                 setIsValidInfo(false);
                 return;

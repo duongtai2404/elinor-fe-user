@@ -9,7 +9,7 @@ import _ from 'lodash';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#dfa974',
+            main: '#9f8d83',
         },
     },
 });
@@ -34,6 +34,9 @@ function HeaderPaymentSuccess({ }) {
                     <ThemeProvider theme={theme}>
 
                         <Button
+                            sx={{
+                                color: 'white',
+                            }}
                             onClick={navigateToHome}
                             startIcon={<KeyboardBackspaceOutlinedIcon />}
                         >

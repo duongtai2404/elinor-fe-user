@@ -18,7 +18,7 @@ import Box from '@mui/material/Box';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#dfa974',
+            main: '#9f8d83'
         },
     },
 });
@@ -179,34 +179,34 @@ function Index() {
                     <Row>
                         {/* Khung ngày, giờ */}
                         <Col lg={6} md={6} sm={12} xs={12} style={{ paddingTop: '40px' }}>
-                            <div style={{ border: '2px solid #dfa974', borderRadius: '10px', padding: '20px 10px' }}>
+                            <div style={{ border: '5px solid #9f8d83', borderRadius: '10px', padding: '20px 10px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
-                                    <p style={{ fontSize: '1.6em', display: 'flex' }} className='protest-strike-regular'>Chọn ngày/khung giờ: </p>
+                                    <p style={{ fontSize: '1.6em', display: 'flex', color: 'white' }} className='protest-strike-regular'>Chọn ngày/khung giờ: </p>
                                 </div>
                                 <div style={{ minHeight: '300px' }}>
 
                                     <TimeTable numPeople={numPeople} onSelectedTimeSlot={onSelectedTimeSlot} />
                                 </div>
-                                <Row >
+                                <div style={{ color: 'white' }} >
                                     <Col xs={10} md={10} sm={10} className='d-flex' style={{ marginTop: '10px' }}>
                                         <div style={{ display: 'flex', fontSize: '12px' }}>
                                             <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                                <div style={{ backgroundColor: '#dfa974', width: '70px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
+                                                <div style={{ backgroundColor: '#9f8d83', width: '70px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
                                             </div>
                                             <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                                <div style={{ backgroundColor: '#white', width: '70px', height: '20px', margin: '0 4px 0 0', border: '1px solid #00000078' }}></div> <span>Còn trống</span>
+                                                <div style={{ backgroundColor: 'white', width: '70px', height: '20px', margin: '0 4px 0 0', border: '1px solid #00000078' }}></div> <span>Còn trống</span>
                                             </div>
                                             <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
                                                 <div style={{ backgroundColor: '#42D7F1', width: '70px', height: '20px', margin: '0 4px 0 0' }}></div> <span>Đang chọn</span>
                                             </div>
                                         </div>
                                     </Col>
-                                </Row>
+                                </div>
                             </div>
                         </Col>
                         {/* Danh sách menu */}
                         <Col lg={6} md={6} sm={12} xs={12} style={{ paddingTop: '40px' }}>
-                            <div style={{ borderRadius: '10px', padding: '20px 10px', backgroundColor: '#dfa974' }}>
+                            <div style={{ borderRadius: '10px', padding: '20px 10px', border: '5px solid #9f8d83' }}>
 
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
                                     <p style={{ color: 'white', fontSize: '1.6em' }} className='protest-strike-regular'>Chọn menu: </p>

@@ -11,7 +11,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#dfa974',
+            main: '#9f8d83',
         },
     },
 });

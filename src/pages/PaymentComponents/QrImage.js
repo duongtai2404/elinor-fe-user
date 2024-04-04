@@ -71,7 +71,7 @@ function QrImage({ qrContent }) {
     }
 
     const containerStyle = {
-        // border: '1px solid #dfa974',
+        // border: '1px solid #9f8d83',
         // borderRadius: '20px',
         padding: '30px 20px 10px 20px'
     }

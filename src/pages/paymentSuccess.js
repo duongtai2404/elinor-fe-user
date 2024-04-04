@@ -66,7 +66,7 @@ function PaymentSuccess() {
             style={{
               backgroundColor: 'white',
               padding: '30px',
-              borderRadius: '4px',
+              borderRadius: '20px',
               margin: '0 auto',
               textAlign: 'center'
             }}
@@ -81,15 +81,15 @@ function PaymentSuccess() {
               }}
             >
               <i className='checkmark' style={{
-                color: 'darkorange',
-                fontSize: '110px',
+                color: 'green',
+                fontSize: '140px',
 
               }}>✓</i>
             </div>
-            <p className='protest-strike-regular' style={{ marginTop: '30px', fontSize: '30px' }}>Đặt bàn thành công</p>
+            <p className='protest-strike-regular' style={{ marginTop: '30px', fontSize: '30px', color: '#9f8d83' }}>Đặt bàn thành công</p>
             <br />
             <p>
-              Thông tin <span style={{ fontWeight: 'bold' }}>xác nhận đặt bàn thành công</span>đã
+              Thông tin <span style={{ fontWeight: 'bold' }}>xác nhận đặt bàn thành công </span>đã
               được gửi tới email <b>{userEmail}</b><br /> <span style={{ color: 'red', fontSize: '13px' }}>*Vui lòng kiểm tra hộp thư đến hoặc hộp thư spam để nhận những thông tin đặt bàn phục vụ cho bữa tối của bạn nhé.</span><br /> <br />
             </p>
           </div>

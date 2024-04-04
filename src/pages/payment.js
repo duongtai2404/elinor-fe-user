@@ -4,20 +4,12 @@ import _ from 'lodash';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Footer from './footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import HeaderPayment from './PaymentComponents/HeaderPayment';
 import GeneralInfo from './PaymentComponents/GeneralInfo';
 import { Col, Row } from 'react-bootstrap';
 import QrImage from './PaymentComponents/QrImage';
 import PaymentInformation from './PaymentComponents/PaymentInformation';
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#dfa974',
-        },
-    },
-});
+import { Container } from '@mui/material';
 
 
 function Payment() {
@@ -230,15 +222,18 @@ function Payment() {
             {/* hình mã qr và thông tin chuyển khoản */}
             <section className="hp-room-section" style={{ paddingTop: '20px', paddingBottom: '40px' }} >
                 <div className="container-fluid">
-                    <Row>
-                        <Col lg={6} md={6} sm={12} xs={12}>
-                            <QrImage qrContent={paymentInfo?.qrContent} />
-                        </Col>
-                        {/* thông tin chuyển khoản */}
-                        <Col lg={6} md={6} sm={12} xs={12}>
-                            <PaymentInformation isActivePaymentInfo={isActivePaymentInfo} paymentInfo={paymentInfo} />
-                        </Col>
-                    </Row>
+                    <Container style={{ backgroundColor: '#ffffff', borderRadius: '20px', border: '1px solid #9f8d83', padding: '0px 5px 30px 5px' }}>
+
+                        <Row >
+                            <Col lg={6} md={6} sm={12} xs={12}>
+                                <QrImage qrContent={paymentInfo?.qrContent} />
+                            </Col>
+                            {/* thông tin chuyển khoản */}
+                            <Col lg={6} md={6} sm={12} xs={12}>
+                                <PaymentInformation isActivePaymentInfo={isActivePaymentInfo} paymentInfo={paymentInfo} />
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
             </section>
 

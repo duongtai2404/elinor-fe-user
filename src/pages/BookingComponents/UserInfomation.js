@@ -6,7 +6,17 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import _ from 'lodash';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#9f8d83'
+        }
+    }
+});
 
 function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
     const [userInfo, setUserInfo] = useState({
@@ -102,26 +112,36 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
             component="form"
             noValidate
             autoComplete="off"
+            sx={{
+                color: 'white'
+            }}
         >
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }} style={{ marginBottom: '30px' }}>
-                <AccountCircleOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
-                <TextField value={userInfo.name} onBlur={() => checkError('name')} onChange={onChangeValue} name='name' required color='warning' fullWidth label="Tên " variant="standard" error={!_.isEmpty(errorUserInfo?.name)} helperText={errorUserInfo?.name} />
+                <ThemeProvider theme={theme}>
+                    <AccountCircleOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
+                    <TextField value={userInfo.name} onBlur={() => checkError('name')} onChange={onChangeValue} name='name' required fullWidth label="Tên " variant="standard" error={!_.isEmpty(errorUserInfo?.name)} helperText={errorUserInfo?.name} />
+                </ThemeProvider>
             </Box>
 
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }} style={{ marginBottom: '30px' }}>
-                <LocalPhoneOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
-                <TextField value={userInfo.phone} onBlur={() => checkError('phone')} onChange={onChangeValue} name='phone' required color='warning' fullWidth label="Số điện thoại " variant="standard" error={!_.isEmpty(errorUserInfo?.phone)} helperText={errorUserInfo?.phone} />
+                <ThemeProvider theme={theme}>
+                    <LocalPhoneOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
+                    <TextField value={userInfo.phone} onBlur={() => checkError('phone')} onChange={onChangeValue} name='phone' required fullWidth label="Số điện thoại " variant="standard" error={!_.isEmpty(errorUserInfo?.phone)} helperText={errorUserInfo?.phone} />
+                </ThemeProvider>
             </Box>
 
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }} style={{ marginBottom: '30px' }}>
-                <EmailOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
-                <TextField value={userInfo.email} onBlur={() => checkError('email')} onChange={onChangeValue} name='email' required color='warning' fullWidth label="Email " variant="standard" error={!_.isEmpty(errorUserInfo?.email)} helperText={errorUserInfo?.email} />
+                <ThemeProvider theme={theme}>
+                    <EmailOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
+                    <TextField value={userInfo.email} onBlur={() => checkError('email')} onChange={onChangeValue} name='email' required fullWidth label="Email " variant="standard" error={!_.isEmpty(errorUserInfo?.email)} helperText={errorUserInfo?.email} />
+                </ThemeProvider>
             </Box>
 
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }} style={{ marginBottom: '30px' }}>
-                <EditNoteOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
-
-                <TextField value={userInfo.note} onChange={onChangeValue} name='note' color='warning' fullWidth label="Ghi chú" multiline rows={2} variant="standard" />
+                <ThemeProvider theme={theme}>
+                    <EditNoteOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
+                    <TextField value={userInfo.note} onChange={onChangeValue} name='note' fullWidth label="Ghi chú" multiline rows={2} variant="standard" />
+                </ThemeProvider>
             </Box>
 
         </Box>
@@ -130,9 +150,11 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
 
 function UserInformationBooking({ userInfo, changeUserInfo, checkIsValid }) {
     const containerStyle = {
-        border: '2px solid #dfa974',
+        border: '2px solid #9f8d83',
         borderRadius: '20px',
-        padding: '30px 20px 10px 20px'
+        padding: '30px 20px 10px 20px',
+        backgroundColor: 'white',
+        color: '#9f8d83'
     }
 
     return (

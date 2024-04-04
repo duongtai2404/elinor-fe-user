@@ -34,22 +34,22 @@ const NumberOfPeopleInput = ({ change }) => {
 
     return (
         <div className="counter-input-container" style={{ paddingBottom: '15px' }}>
-            <Form.Group controlId="counterInput" style={{ backgroundColor: '#dfa974', padding: '10px', borderRadius: '10px' }}>
-                <Row>
+            <Form.Group controlId="counterInput" style={{ padding: '10px' }}>
+                <Row style={{ border: '5px solid #9f8d83', borderRadius: '10px' }}>
                     <Col xs={3} md={3} sm={3} className='d-flex' style={{ marginTop: '10px' }}>
                         <p style={{ color: 'white', fontSize: '18px', fontWeight: 'bold' }} >Số người: </p>
                     </Col>
                     <Col xs={9} md={9} sm={9} className='d-flex' >
-                        <div className="input-group" style={{ border: '1px solid hsl(0, 0%, 80%)', borderRadius: '4px', borderColor: '#dfa974', backgroundColor: 'white' }}>
+                        <div className="input-group" style={{ borderRadius: '4px', borderColor: '#9f8d83', color: 'white' }}>
                             <button
                                 onClick={handleDecrease}
                                 className={`border-0 bold-text-button ${isDecreaseClicked ? 'bold-button' : ''}`}
-                                style={{ backgroundColor: 'transparent', color: 'black', width: '50px', fontSize: '25px' }}
+                                style={{ backgroundColor: 'transparent', color: 'white', width: '50px', fontSize: '25px' }}
                             >
                                 -
                             </button>
                             <Form.Control
-                                style={{ backgroundColor: 'transparent', paddingTop: '15px', color: 'black' }}
+                                style={{ backgroundColor: 'transparent', paddingTop: '15px', color: 'white' }}
                                 className='text-center border-0'
                                 type="text"
                                 value={count}
@@ -58,7 +58,7 @@ const NumberOfPeopleInput = ({ change }) => {
                             <button
                                 onClick={handleIncrease}
                                 className={`border-0 bold-text-button ${isIncreaseClicked ? 'bold-button' : ''}`}
-                                style={{ backgroundColor: 'transparent', color: 'black', width: '50px', fontSize: '22px' }}
+                                style={{ backgroundColor: 'transparent', color: 'white', width: '50px', fontSize: '22px' }}
                             >
                                 +
                             </button>

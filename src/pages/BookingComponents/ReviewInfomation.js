@@ -26,7 +26,7 @@ function ItemReview({ content }) {
     }, []);
     const fatherStyle = {
         minWidth: '1em',
-        backgroundColor: '#eebb89',
+        backgroundColor: '#817169',
         borderRadius: '10px',
         marginBottom: '10px',
         alignItems: 'center',
@@ -50,9 +50,9 @@ function ItemReview({ content }) {
 
 function ReviewInformationBooking({ numPeople, selectedMenu, selectedTimeSlot }) {
     const containerStyle = {
-        border: '1px solid #dfa974',
+        border: '1px solid #9f8d83',
         borderRadius: '20px',
-        backgroundColor: '#dfa974',
+        backgroundColor: '#9f8d83',
         padding: '30px 20px 10px 20px'
     }
 

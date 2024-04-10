@@ -86,7 +86,7 @@ function PaymentSuccess() {
 
               }}>✓</i>
             </div>
-            <p className='protest-strike-regular' style={{ marginTop: '30px', fontSize: '30px', color: '#9f8d83' }}>Đặt bàn thành công</p>
+            <p className='protest-strike-regular' style={{ marginTop: '30px', fontSize: '30px', color: '#eabe6c' }}>Đặt bàn thành công</p>
             <br />
             <p>
               Thông tin <span style={{ fontWeight: 'bold' }}>xác nhận đặt bàn thành công </span>đã

@@ -165,7 +165,7 @@
   .inAvailable-item {
     border: 1px solid;
     border-radius: 5px;
-    border-color: #9f8d83;
+    border-color: #eabe6c;
     min-width: 30px;
     color: transparent;
     background-color: white;
@@ -173,7 +173,7 @@
 
   .available-item {
     border-radius: 5px;
-    background-color: #9f8d83;
+    background-color: #eabe6c;
     min-width: 30px;
     color: transparent;
   }
@@ -256,10 +256,10 @@
     display: block;
     font-size: 12px;
     text-transform: uppercase;
-    border: 1px solid #9f8d83;
+    border: 1px solid #eabe6c;
     border-radius: 2px;
     color: white;
-    background-color: #9f8d83;
+    background-color: #eabe6c;
     font-weight: 500;
     background: transparent;
     width: 25%;
@@ -271,14 +271,14 @@
 
   .disabled-btn {
     cursor: not-allowed; /* Đổi con trỏ chuột thành not-allowed khi tắt */
-    color: #9f8d83;
-    border: 1px solid #9f8d83;
+    color: #eabe6c;
+    border: 1px solid #eabe6c;
     background-color: transparent;
     /* Bất kỳ kiểu CSS khác mà bạn muốn áp dụng cho nút tắt */
   }
 
   .invalid-btn {
-    background-color: #9f8d83;
+    background-color: #eabe6c;
     color: white;
   }
 
@@ -399,7 +399,7 @@
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background-color: #9f8d83;
+  background-color: #eabe6c;
   transition: all 1.3s;
 }
 
@@ -410,7 +410,7 @@
 .btn-outline-confirm {
   font-family: "Protest Strike", sans-serif !important;
   background-color: none;
-  border: 1px solid #9f8d83 !important;
+  border: 1px solid #eabe6c !important;
   font-weight: lighter !important;
   font-weight: lighter !important;
 }
@@ -419,11 +419,11 @@
   font-family: "Protest Strike", sans-serif !important;
   font-weight: lighter !important;
 
-  background-color: #9f8d83 !important;
-  /* border: 1px solid #9f8d83 !important; */
+  background-color: #eabe6c !important;
+  /* border: 1px solid #eabe6c !important; */
   font-weight: lighter !important;
 }
 
 .back-button {
-  color: white !important;
+  color: #eabe6c !important;
 }

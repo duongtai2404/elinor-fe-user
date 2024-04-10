@@ -13,7 +13,7 @@ import _ from 'lodash';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#9f8d83'
+            main: '#eabe6c'
         }
     }
 });
@@ -150,11 +150,11 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
 
 function UserInformationBooking({ userInfo, changeUserInfo, checkIsValid }) {
     const containerStyle = {
-        border: '2px solid #9f8d83',
+        border: '2px solid #2a5a46',
         borderRadius: '20px',
         padding: '30px 20px 10px 20px',
         backgroundColor: 'white',
-        color: '#9f8d83'
+        color: '#eabe6c'
     }
 
     return (

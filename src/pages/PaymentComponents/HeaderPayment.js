@@ -25,16 +25,16 @@ function HeaderPayment({ numPeople, selectedMenu, selectedTimeSlot, userInfo, pa
 
     const buttonStyle = {
         color: 'white', // Màu chữ trắng
-        backgroundColor: '#9f8d83', // Màu nền theo ý muốn của bạn
-        borderColor: '#9f8d83', // Màu viền theo ý muốn của bạn
+        backgroundColor: '#eabe6c', // Màu nền theo ý muốn của bạn
+        borderColor: '#eabe6c', // Màu viền theo ý muốn của bạn
         marginBottom: '10px',
         fontSize: '16px'
     };
 
     const buttonInActiveStyle = {
-        color: '#9f8d83', // Màu chữ trắng
+        color: '#eabe6c', // Màu chữ trắng
         backgroundColor: 'transparent', // Màu nền theo ý muốn của bạn
-        borderColor: '#9f8d83', // Màu viền theo ý muốn của bạn
+        borderColor: '#eabe6c', // Màu viền theo ý muốn của bạn
         marginBottom: '10px',
         fontSize: '16px'
     };
@@ -74,6 +74,7 @@ function HeaderPayment({ numPeople, selectedMenu, selectedTimeSlot, userInfo, pa
                         <Button
                             onClick={handleShow}
                             startIcon={<KeyboardBackspaceOutlinedIcon />}
+                            style={{ color: '#eabe6c' }}
                         >
                             Trở về
                         </Button>

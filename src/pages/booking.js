@@ -16,7 +16,7 @@ import Box from '@mui/material/Box';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#9f8d83',
+            main: '#eabe6c',
         },
     },
 });
@@ -156,7 +156,7 @@ function Booking() {
                 </div>
             </section>
 
-            <section className="hp-room-section" style={{ paddingTop: '40px', paddingBottom: '20px' }}>
+            <section className="hp-room-section" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
                 <div className="container-fluid">
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                         <ThemeProvider theme={theme}>
@@ -168,7 +168,7 @@ function Booking() {
                 </div>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
         </Fragment >
     )
 }

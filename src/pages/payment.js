@@ -222,7 +222,7 @@ function Payment() {
             {/* hình mã qr và thông tin chuyển khoản */}
             <section className="hp-room-section" style={{ paddingTop: '20px', paddingBottom: '40px' }} >
                 <div className="container-fluid">
-                    <Container style={{ backgroundColor: '#ffffff', borderRadius: '20px', border: '1px solid #9f8d83', padding: '0px 5px 30px 5px' }}>
+                    <Container style={{ backgroundColor: '#ffffff', borderRadius: '20px', border: '1px solid #eabe6c', padding: '0px 5px 30px 5px' }}>
 
                         <Row >
                             <Col lg={6} md={6} sm={12} xs={12}>
@@ -237,7 +237,7 @@ function Payment() {
                 </div>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
         </Fragment >
     )
 }

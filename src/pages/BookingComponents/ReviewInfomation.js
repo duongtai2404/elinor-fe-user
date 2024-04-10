@@ -26,7 +26,7 @@ function ItemReview({ content }) {
     }, []);
     const fatherStyle = {
         minWidth: '1em',
-        backgroundColor: '#817169',
+        backgroundColor: '#18392B',
         borderRadius: '10px',
         marginBottom: '10px',
         alignItems: 'center',
@@ -35,7 +35,7 @@ function ItemReview({ content }) {
     }
 
     const childStyle = {
-        color: 'white',
+        color: '#eabe6c',
         paddingLeft: '20px',
         fontSize: '18px',
         fontWeight: 'bold'
@@ -50,9 +50,9 @@ function ItemReview({ content }) {
 
 function ReviewInformationBooking({ numPeople, selectedMenu, selectedTimeSlot }) {
     const containerStyle = {
-        border: '1px solid #9f8d83',
+        border: '1px solid #2a5a46',
         borderRadius: '20px',
-        backgroundColor: '#9f8d83',
+        backgroundColor: '#2a5a46',
         padding: '30px 20px 10px 20px'
     }
 
@@ -65,8 +65,8 @@ function ReviewInformationBooking({ numPeople, selectedMenu, selectedTimeSlot })
     return (
         <Container style={containerStyle}>
             <div style={{ textAlign: 'center' }}>
-                <h1 className='protest-strike-regular' style={{ color: 'white' }} >Elinor - Fine dining & more</h1>
-                <p style={{ color: 'white', marginTop: '20px', fontSize: '1.2em' }}> {`${moment(selectedTimeSlot?.from).format('DD/MM/YYYY')} - ${moment(selectedTimeSlot?.from).format('HH:mm')}`}</p>
+                <h1 className='protest-strike-regular' style={{ color: '#eabe6c' }} >Elinor - Fine dining & more</h1>
+                <p style={{ color: '#eabe6c', marginTop: '20px', fontSize: '1.2em' }}> {`${moment(selectedTimeSlot?.from).format('DD/MM/YYYY')} - ${moment(selectedTimeSlot?.from).format('HH:mm')}`}</p>
             </div>
             <div style={{ textAlign: 'left', color: 'white' }}>
                 <ItemReview content={`- Số người: ${numPeople}`} />

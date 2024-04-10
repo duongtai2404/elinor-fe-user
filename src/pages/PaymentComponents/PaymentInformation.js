@@ -6,7 +6,7 @@ import numeral from 'numeral';
 function PaymentInformation({ paymentInfo, isActivePaymentInfo }) {
 
     const containerStyle = {
-        border: '1px solid #9f8d83',
+        border: '1px solid #eabe6c',
         borderRadius: '20px',
         padding: '30px 20px 10px 20px'
     }
@@ -19,7 +19,7 @@ function PaymentInformation({ paymentInfo, isActivePaymentInfo }) {
         <Container className={`test-transaction ${isActivePaymentInfo ? 'scroll' : ''}`} style={containerStyle}>
             <div className='payment-information'>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                    <h1 className='protest-strike-regular' style={{ fontSize: '25px', color: isActivePaymentInfo ? 'white' : '#9f8d83' }} >Nội dung chuyển khoản</h1>
+                    <h1 className='protest-strike-regular' style={{ fontSize: '25px', color: isActivePaymentInfo ? 'white' : '#eabe6c' }} >Nội dung chuyển khoản</h1>
                 </div>
                 <ListGroup variant='flush'>
                     <ListGroup.Item className='none-border'>

@@ -35,12 +35,12 @@ const NumberOfPeopleInput = ({ change }) => {
     return (
         <div className="counter-input-container" style={{ paddingBottom: '15px' }}>
             <Form.Group controlId="counterInput" style={{ padding: '10px' }}>
-                <Row style={{ border: '5px solid #9f8d83', borderRadius: '10px' }}>
+                <Row style={{ border: '5px solid #eabe6c', borderRadius: '10px' }}>
                     <Col xs={3} md={3} sm={3} className='d-flex' style={{ marginTop: '10px' }}>
                         <p style={{ color: 'white', fontSize: '18px', fontWeight: 'bold' }} >Số người: </p>
                     </Col>
                     <Col xs={9} md={9} sm={9} className='d-flex' >
-                        <div className="input-group" style={{ borderRadius: '4px', borderColor: '#9f8d83', color: 'white' }}>
+                        <div className="input-group" style={{ borderRadius: '4px', borderColor: '#eabe6c', color: 'white' }}>
                             <button
                                 onClick={handleDecrease}
                                 className={`border-0 bold-text-button ${isDecreaseClicked ? 'bold-button' : ''}`}

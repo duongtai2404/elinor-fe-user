@@ -37,7 +37,7 @@ const SlideImage = ({ imageHomeList }) => {
             >
                 {imageHomeList.map((item, index) => {
                     return <SwiperSlide>
-                        <div style={{ padding: '6px', backgroundColor: '#9f8d83', borderRadius: '2em' }}>
+                        <div style={{ padding: '6px', backgroundColor: '#eabe6c', borderRadius: '2em' }}>
                             <img src={item} alt="slide_image" />
                         </div>
                     </SwiperSlide>

@@ -18,7 +18,7 @@ import Box from '@mui/material/Box';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#9f8d83'
+            main: '#eabe6c'
         },
     },
 });
@@ -153,7 +153,7 @@ function Index() {
             <Menu />
 
             {/* <!-- Danh sách hình banner --> */}
-            <section className="hp-room-section" style={{ paddingTop: '0px' }} >
+            <section className="hp-room-section" style={{ paddingTop: '0px', marginTop: '-20px' }} >
                 <div className="container-fluid">
                     <div className="hp-room-items">
                         <div className="row">
@@ -179,7 +179,7 @@ function Index() {
                     <Row>
                         {/* Khung ngày, giờ */}
                         <Col lg={6} md={6} sm={12} xs={12} style={{ paddingTop: '40px' }}>
-                            <div style={{ border: '5px solid #9f8d83', borderRadius: '10px', padding: '20px 10px' }}>
+                            <div style={{ border: '5px solid #eabe6c', borderRadius: '10px', padding: '20px 10px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
                                     <p style={{ fontSize: '1.6em', display: 'flex', color: 'white' }} className='protest-strike-regular'>Chọn ngày/khung giờ: </p>
                                 </div>
@@ -191,7 +191,7 @@ function Index() {
                                     <Col xs={10} md={10} sm={10} className='d-flex' style={{ marginTop: '10px' }}>
                                         <div style={{ display: 'flex', fontSize: '12px' }}>
                                             <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
-                                                <div style={{ backgroundColor: '#9f8d83', width: '70px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
+                                                <div style={{ backgroundColor: '#eabe6c', width: '70px', height: '20px', margin: '0 4px 0 0', display: 'flex' }}></div> <span>Đã đặt</span>
                                             </div>
                                             <div style={{ margin: '0 10px 0 0', display: 'flex', alignItems: 'center' }}>
                                                 <div style={{ backgroundColor: 'white', width: '70px', height: '20px', margin: '0 4px 0 0', border: '1px solid #00000078' }}></div> <span>Còn trống</span>
@@ -206,7 +206,7 @@ function Index() {
                         </Col>
                         {/* Danh sách menu */}
                         <Col lg={6} md={6} sm={12} xs={12} style={{ paddingTop: '40px' }}>
-                            <div style={{ borderRadius: '10px', padding: '20px 10px', border: '5px solid #9f8d83' }}>
+                            <div style={{ borderRadius: '10px', padding: '20px 10px', border: '5px solid #eabe6c' }}>
 
                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
                                     <p style={{ color: 'white', fontSize: '1.6em' }} className='protest-strike-regular'>Chọn menu: </p>
@@ -221,7 +221,7 @@ function Index() {
             </section>
 
             {/* nút xác nhận */}
-            <section className="hp-room-section" style={{ paddingTop: '50px', marginBottom: '20px' }}>
+            <section className="hp-room-section" style={{ paddingTop: '50px', marginBottom: '20px', paddingBottom: '50px' }}>
                 <div className="container-fluid">
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                         <ThemeProvider theme={theme}>
@@ -234,7 +234,7 @@ function Index() {
                 </div>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
         </Fragment >
     )
 }

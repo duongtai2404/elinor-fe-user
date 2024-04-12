@@ -35,7 +35,7 @@ function HeaderPaymentSuccess({ }) {
 
                         <Button
                             sx={{
-                                color: 'white',
+                                color: '#eabe6c',
                             }}
                             onClick={navigateToHome}
                             startIcon={<KeyboardBackspaceOutlinedIcon />}

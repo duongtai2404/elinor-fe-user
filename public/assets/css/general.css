@@ -306,6 +306,10 @@
   transition: transform 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
+.button-menu-list:focus {
+  box-shadow: none !important;
+}
+
 .special-transition {
   animation: specialTransition 1s ease infinite;
 }

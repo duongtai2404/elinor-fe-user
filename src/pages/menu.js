@@ -55,7 +55,7 @@ function Menu(props) {
                                     <div className="top-social" >
                                         <a href={siteInfo.facebook} target="_blank"><i className="fa fa-facebook-official" style={{ color: '#eabe6c' }}></i></a>
                                         <a href={siteInfo.instagram} target="_blank"><i className="fa fa-instagram" style={{ color: '#eabe6c' }}></i></a>
-                                        <a href={siteInfo.tiktok} target="_blank"><i className="fa fa-tumblr-square" style={{ color: '#eabe6c' }}></i></a>
+                                        <a href={siteInfo.tiktok} target="_blank"><i className="fab fa-tiktok" style={{ color: '#eabe6c' }}></i></a>
                                     </div>
                                     {/* <a href="#" className="bk-btn">Đặt ngay</a> */}
                                 </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import _ from 'lodash';
 import { Container, Row, Col, Button, ListGroup, Accordion } from 'react-bootstrap';
 import numeral from 'numeral';
 
@@ -38,7 +39,7 @@ function MenuButton({ item, onItemClick, active }) {
                 </Button>
             </div>
             <ListGroup variant='flush' >
-                {item?.items.map((food, index) => (
+                {_.map(item?.items, (food, index) => (
                     <ListGroup.Item key={index} style={{ fontSize: '12px' }}>{` - ${food?.name}`}</ListGroup.Item>
                 ))}
             </ListGroup>
@@ -57,7 +58,7 @@ function MenuList({ data, selectedMenuItems }) {
     return (
         <Container>
             <Row className='justify-content-center'>
-                {data.map((item, index) => (
+                {_.map(data, (item, index) => (
                     <Col xs={6} md={6} sm={6} >
                         <MenuButton key={index} item={item} active={selectedMenu?.id === item.id} onItemClick={handleMenuClick} />
                     </Col>

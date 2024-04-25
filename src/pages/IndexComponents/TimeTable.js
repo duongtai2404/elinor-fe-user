@@ -175,13 +175,13 @@ const TimeTable = ({ numPeople, onSelectedTimeSlot }) => {
                     <Table striped bordered hover style={{ fontSize: '10px' }}>
                         <thead className="table-detail-time-booking">
                             <tr>
-                                {headerValue.map((item, index) => (
+                                {_.map(headerValue, (item, index) => (
                                     <th key={index}  >{item}</th>
                                 ))}
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((item, index) => (
+                            {_.map(data, (item, index) => (
                                 <tr key={index}>
 
                                     <td className='sticky-column'>{item.date1}</td>

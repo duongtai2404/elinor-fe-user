@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import _ from 'lodash';
 
 import '../../slide.css'
 
@@ -35,7 +36,7 @@ const SlideImage = ({ imageHomeList }) => {
                 modules={[EffectCoverflow, Pagination, Navigation]}
                 className="swiper_container"
             >
-                {imageHomeList.map((item, index) => {
+                {_.map(imageHomeList, (item, index) => {
                     return <SwiperSlide>
                         <div style={{ padding: '6px', backgroundColor: '#eabe6c', borderRadius: '2em' }}>
                             <img src={item} alt="slide_image" />

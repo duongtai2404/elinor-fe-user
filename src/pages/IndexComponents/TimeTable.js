@@ -71,8 +71,8 @@ const TimeTable = ({ numPeople, onSelectedTimeSlot }) => {
             // set loading cho mỗi lần scroll table
             setLoading(true);
 
-            const from = moment(startDate).toISOString();
-            let to = moment(startDate).add(fetchDay, 'days').toISOString();
+            const from = moment(isInit ? null : startDate).toISOString();
+            let to = moment(isInit ? null : startDate).add(fetchDay, 'days').toISOString();
 
             const data = {
                 customerNumber: numPeople,
@@ -124,7 +124,12 @@ const TimeTable = ({ numPeople, onSelectedTimeSlot }) => {
                     newData.push(obj);
                 });
 
-                setData((prevData) => [...prevData, ...newData]);
+                setData((prevData) => {
+                    if (isInit) return [...newData]
+                    else {
+                        return [...prevData, ...newData]
+                    }
+                });
 
                 setStartDate(moment(to).add(1, 'days'));
             }

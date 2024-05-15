@@ -71,8 +71,8 @@ const TimeTable = ({ numPeople, onSelectedTimeSlot }) => {
             // set loading cho mỗi lần scroll table
             setLoading(true);
 
-            const from = moment(isInit ? null : startDate).toISOString();
-            let to = moment(isInit ? null : startDate).add(fetchDay, 'days').toISOString();
+            const from = moment(isInit ? new Date() : startDate).toISOString();
+            let to = moment(isInit ? new Date() : startDate).add(fetchDay, 'days').toISOString();
 
             const data = {
                 customerNumber: numPeople,

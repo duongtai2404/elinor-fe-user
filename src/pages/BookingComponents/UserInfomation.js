@@ -7,6 +7,7 @@ import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Grid from '@mui/material/Unstable_Grid2';
 
 import _ from 'lodash';
 
@@ -77,6 +78,13 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
                 }
                 break;
             }
+
+            case 'note': {
+                if (_.isEmpty(userInfo?.note)) {
+                    errorMessage = 'Vui lòng ghi chú thêm lựa chọn độ chín và sốt cho món ăn của bạn.'
+                }
+                break;
+            }
             default:
                 break;
         }
@@ -93,7 +101,7 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
         // kiểm tra còn lỗi error k
         validError = _.pickBy(validError, (value) => !_.isEmpty(value))
         // kiểm tra đã nhập đủ thông tin chưa
-        let validUserInfo = _.pick(userInfo, ['email', 'name', 'phone'])
+        let validUserInfo = _.pick(userInfo, ['email', 'name', 'phone', 'note'])
         validUserInfo = _.pickBy(validUserInfo, (value) => _.isEmpty(value));
         if (_.isEmpty(validError) && _.isEmpty(validUserInfo)) {
             checkIsValid(true)
@@ -140,7 +148,29 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }} style={{ marginBottom: '30px' }}>
                 <ThemeProvider theme={theme}>
                     <EditNoteOutlinedIcon sx={{ color: 'action.active', mr: 2, my: 0.5 }} />
-                    <TextField value={userInfo.note} onChange={onChangeValue} name='note' fullWidth label="Ghi chú" multiline rows={2} variant="standard" />
+                    <TextField value={userInfo.note} onBlur={() => checkError('note')} onChange={onChangeValue} name='note' required fullWidth label="Ghi chú" multiline rows={2} variant="standard" error={!_.isEmpty(errorUserInfo?.note)} helperText={errorUserInfo?.note} />
+                </ThemeProvider>
+            </Box>
+
+            <Box sx={{ display: 'flex', alignItems: 'center' }} style={{ marginBottom: '30px', justifyContent: 'center', marginLeft: '30px' }}>
+                <ThemeProvider theme={theme}>
+                    <Grid container columnSpacing={3} rowSpacing={1}>
+                        <Grid xs={6} sm={6} md={6} lg={6}>
+                            <p style={{ margin: '0px' }}> * Độ chín của steak:</p>
+                            <p style={{ margin: '0px' }}>- Chín vừa </p>
+                            <p style={{ margin: '0px' }}>- Chín tái </p>
+                        </Grid>
+                        <Grid xs={6} sm={6} md={6} lg={6}>
+                            <p style={{ margin: '0px' }}> * Sốt ăn kèm steak:</p>
+                            <p style={{ margin: '0px' }}>- Tiêu đen </p>
+                            <p style={{ margin: '0px' }}>- Nấm </p>
+                            <p style={{ margin: '0px' }}>- Phô mai </p>
+                        </Grid>
+                        <Grid xs={12} sm={12} md={12} lg={12} >
+                            <p style={{ margin: '0px', color: 'red' }}>* Vui lòng chọn độ chín và sốt: </p>
+                            <p style={{ margin: '0px', color: 'red' }}>- VD: Chín tái - tiêu đen </p>
+                        </Grid>
+                    </Grid>
                 </ThemeProvider>
             </Box>
 

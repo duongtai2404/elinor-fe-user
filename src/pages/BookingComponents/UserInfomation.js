@@ -154,20 +154,20 @@ function FormBooking({ existUserInfo, changeUserInfo, checkIsValid }) {
 
             <Box sx={{ display: 'flex', alignItems: 'center' }} style={{ marginBottom: '30px', justifyContent: 'center', marginLeft: '30px' }}>
                 <ThemeProvider theme={theme}>
-                    <Grid container columnSpacing={3} rowSpacing={1}>
-                        <Grid xs={6} sm={6} md={6} lg={6}>
-                            <p style={{ margin: '0px' }}> * Độ chín của steak:</p>
-                            <p style={{ margin: '0px' }}>- Chín vừa </p>
-                            <p style={{ margin: '0px' }}>- Chín tái </p>
+                    <Grid container columnSpacing={2} rowSpacing={1}>
+                        <Grid xs={7} sm={7} md={7} lg={7}>
+                            <p style={{ margin: '0px' }}> * Độ chín:</p>
+                            <p style={{ margin: '0px' }}>- Chín vừa (Medium)</p>
+                            <p style={{ margin: '0px' }}>- Chín tái (Medium rare)</p>
                         </Grid>
-                        <Grid xs={6} sm={6} md={6} lg={6}>
-                            <p style={{ margin: '0px' }}> * Sốt ăn kèm steak:</p>
+                        <Grid xs={5} sm={5} md={5} lg={5}>
+                            <p style={{ margin: '0px' }}> * Sốt:</p>
                             <p style={{ margin: '0px' }}>- Tiêu đen </p>
                             <p style={{ margin: '0px' }}>- Nấm </p>
                             <p style={{ margin: '0px' }}>- Phô mai </p>
                         </Grid>
                         <Grid xs={12} sm={12} md={12} lg={12} >
-                            <p style={{ margin: '0px', color: 'red' }}>* Vui lòng chọn độ chín và sốt: </p>
+                            <p style={{ margin: '0px', color: 'red' }}>* Vui lòng chọn độ chín và sốt cho steak: </p>
                             <p style={{ margin: '0px', color: 'red' }}>- VD: Chín tái - tiêu đen </p>
                         </Grid>
                     </Grid>

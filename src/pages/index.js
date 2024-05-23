@@ -59,7 +59,7 @@ function Index() {
 
     const [imageHomeList, setImageHomeList] = useState([]);
 
-    // const [siteInfo, setSiteInfo] = useState({});
+    const [siteInfo, setSiteInfo] = useState({});
     const [errorAPI, setErrorAPI] = useState([]);
 
     const navigateToBooking = () => {
@@ -103,6 +103,8 @@ function Index() {
                     const bannerImages = homeResult?.data?.bannerImages || [];
                     // const imageList = _.flatten(_.map(homeList, 'images'));
                     setImageHomeList(bannerImages);
+                    const siteInfo = homeResult?.data
+                    setSiteInfo(siteInfo);
                 }
             } catch (error) {
                 console.log(`ERROR when call get list bannerImages ${error.message} -- ${JSON.stringify(error)}`);
@@ -150,7 +152,7 @@ function Index() {
 
     return (
         <Fragment>
-            <Menu />
+            <Menu siteInfo={siteInfo} />
 
             {/* <!-- Danh sách hình banner --> */}
             <section className="hp-room-section" style={{ paddingTop: '0px', marginTop: '-20px' }} >

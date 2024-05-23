@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 
 
-function Menu(props) {
+function Menu({ siteInfo = {} }) {
 
-    const { siteInfo = {} } = props;
+    // const { siteInfo = {} } = props;
 
     const [isVisible, setIsVisible] = useState(true);
 

@@ -46,7 +46,7 @@ function Menu({ siteInfo = {} }) {
                             <Col lg={6} md={6} sm={6} xs={6}>
 
                                 <ul className="tn-left">
-                                    <li><i className="fa fa-phone" title={siteInfo.phoneNumber}></i> </li>
+                                    <li title={siteInfo.phoneNumber}><i className="fa fa-phone" ></i> </li>
                                     <li className="hover-black"><a className="hover-black" target="_blank" href={siteInfo.facebook} style={{ color: '#eabe6c' }}><i className="fa fa-envelope"></i> Elinor</a></li>
                                 </ul>
                             </Col>

@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
+import _ from 'lodash';
 
 
 function Menu({ siteInfo = {} }) {
@@ -46,7 +47,7 @@ function Menu({ siteInfo = {} }) {
                             <Col lg={6} md={6} sm={6} xs={6}>
 
                                 <ul className="tn-left">
-                                    <li title={siteInfo.phoneNumber}><i className="fa fa-phone" ></i> </li>
+                                    <li ><a href={`tel:+84${_.replace(siteInfo.phoneNumber, '0', '')}`}><i className="fa fa-phone" ></i></a> </li>
                                     <li className="hover-black"><a className="hover-black" target="_blank" href={siteInfo.facebook} style={{ color: '#eabe6c' }}><i className="fa fa-envelope"></i> Elinor</a></li>
                                 </ul>
                             </Col>

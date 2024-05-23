@@ -35,7 +35,7 @@ function MenuButton({ item, onItemClick, active }) {
                 <Button className={`button-menu-list ${isDancing ? 'special-transition' : ''}`} style={active ? buttonStyle : disableBtn}
                     onClick={() => itemClick(item)}
                 >
-                    {item?.name} - {item?.price}
+                    {item?.name} - {numeral(item?.price).format('0,0')}
                 </Button>
             </div>
             <ListGroup variant='flush' >

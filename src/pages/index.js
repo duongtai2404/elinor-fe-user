@@ -97,16 +97,16 @@ function Index() {
         // lấy danh sách sảnh và hình ảnh 
         const fetchHome = async () => {
             try {
-                let homeResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/room/search`, {}, { timeout: 60000 });
+                let homeResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/siteInfo`, {}, { timeout: 60000 });
                 homeResult = homeResult?.data;
                 if (homeResult?.code === 1000) {
-                    const homeList = homeResult?.data?.rooms;
-                    const imageList = _.flatten(_.map(homeList, 'images'));
-                    setImageHomeList(imageList);
+                    const bannerImages = homeResult?.data?.bannerImages || [];
+                    // const imageList = _.flatten(_.map(homeList, 'images'));
+                    setImageHomeList(bannerImages);
                 }
             } catch (error) {
-                console.log(`ERROR when call get list homestay ${error.message} -- ${JSON.stringify(error)}`);
-                const errorSearch = [{ api: '/room/search (2)', error: error.message, data: JSON.stringify(error) }];
+                console.log(`ERROR when call get list bannerImages ${error.message} -- ${JSON.stringify(error)}`);
+                const errorSearch = [{ api: '/siteInfo (2)', error: error.message, data: JSON.stringify(error) }];
                 setErrorAPI(errorSearch);
             }
         }

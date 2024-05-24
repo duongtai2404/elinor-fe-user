@@ -29,7 +29,7 @@ function HeaderDetailRoom({ }) {
 
     return (
         <Container>
-            <Row style={{ marginBottom: '60px' }}>
+            <Row style={{ marginBottom: '30px' }}>
                 <Col xs={6} md={6} sm={6}>
                     <ThemeProvider theme={theme}>
 
@@ -47,7 +47,7 @@ function HeaderDetailRoom({ }) {
 
             </Row>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '40px' }} >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }} >
                 <h1 className='protest-strike-regular' style={{ fontSize: '2.2em', color: 'white' }}> Chi tiết sảnh </h1>
             </div>
         </Container>

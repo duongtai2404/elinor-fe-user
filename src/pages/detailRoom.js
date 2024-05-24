@@ -66,13 +66,13 @@ function DetailRoom() {
                 </div>
             )}
 
-            <section className="hp-room-section" style={{ paddingTop: '50px' }} >
+            <section className="hp-room-section" style={{ paddingTop: '30px' }} >
                 <div className="container-fluid">
                     <HeaderDetailRoom />
                 </div>
             </section>
 
-            <section className="hp-room-section" style={{ paddingTop: '30px', marginBottom: '20px' }} >
+            <section className="hp-room-section" style={{ paddingTop: '10px', marginBottom: '-10px' }} >
                 <div className="container-fluid">
                     {!_.isEmpty(images) ? <div className="hp-room-items">
                         <div className="row">

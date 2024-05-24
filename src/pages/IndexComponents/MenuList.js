@@ -19,19 +19,19 @@ function MenuButton({ item, onItemClick, active }) {
         color: 'white', // Màu chữ trắng
         backgroundColor: '#eabe6c', // Màu nền theo ý muốn của bạn
         borderColor: '#eabe6c', // Màu viền theo ý muốn của bạn
-        marginBottom: '10px'
+        marginBottom: '10px',
     };
 
     const disableBtn = {
         color: '#eabe6c', // Màu chữ trắng
         backgroundColor: 'transparent', // Màu nền theo ý muốn của bạn
         borderColor: '#eabe6c', // Màu viền theo ý muốn của bạn
-        marginBottom: '10px'
+        marginBottom: '10px',
     };
 
     return (
         <div style={{ marginBottom: '20px', padding: '10px', border: '0.2px solid', borderRadius: '7px', borderColor: '#eabe6c', backgroundColor: 'white' }}>
-            <div className='justify-content-center' style={{ alignItems: 'center', backgroundColor: 'white' }}>
+            <div className='justify-content-center' style={{ alignItems: 'center', backgroundColor: 'white', width: '100%', display: 'flex' }}>
                 <Button className={`button-menu-list ${isDancing ? 'special-transition' : ''}`} style={active ? buttonStyle : disableBtn}
                     onClick={() => itemClick(item)}
                 >

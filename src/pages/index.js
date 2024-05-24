@@ -228,7 +228,7 @@ function Index() {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                         <ThemeProvider theme={theme}>
                             <Button className={isActiveConfirmButton() ? 'dancing' : ''} variant={isActiveConfirmButton() ? 'contained' : 'outlined'} size="large" style={{ fontWeight: 'bolder', cursor: `${isActiveConfirmButton() ? '' : 'not-allowed'}` }} onClick={() => navigateToBooking()}>
-                                Xác nhận
+                                Tiếp theo
                             </Button>
                         </ThemeProvider>
                         {/* <button disabled={!showConfirmButton} className={`confirm-time-booking ${showConfirmButton ? '' : 'disabled-btn'}`} onClick={() => navigateToDetail()} style={{ minWidth: '100px', marginTop: '5px' }} > Xác nhận</button> */}

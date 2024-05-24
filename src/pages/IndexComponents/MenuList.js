@@ -59,7 +59,7 @@ function MenuList({ data, selectedMenuItems }) {
         <Container>
             <Row className='justify-content-center'>
                 {_.map(data, (item, index) => (
-                    <Col xs={6} md={6} sm={6} >
+                    <Col xs={12} md={12} sm={12} lg={12} >
                         <MenuButton key={index} item={item} active={selectedMenu?.id === item.id} onItemClick={handleMenuClick} />
                     </Col>
                 ))}

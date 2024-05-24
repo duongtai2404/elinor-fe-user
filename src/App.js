@@ -7,6 +7,7 @@ import Payment from './pages/payment';
 // import HomeStayDetail from './pages/homeStayDetail';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
 import PaymentSuccess from './pages/paymentSuccess';
+import DetailRoom from './pages/detailRoom';
 // import Contact from './pages/contact';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/booking' element={<Booking />} />
           <Route path='/payment' element={<Payment />} />
           <Route path='/paymentSuccess' element={<PaymentSuccess />} />
+          <Route path='/detail' element={<DetailRoom />} />
 
 
           {/* <Route path='/homestay' element={<HomeStay />} />

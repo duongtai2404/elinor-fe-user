@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 import TimeTable from './IndexComponents/TimeTable';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import SlideImageLink from './IndexComponents/SlideImageLink';
 
 const theme = createTheme({
     palette: {
@@ -94,21 +95,40 @@ function Index() {
             }
         }
 
-        // lấy danh sách sảnh và hình ảnh 
-        const fetchHome = async () => {
+        // lấy thông tin chung
+        const fetchSiteInfo = async () => {
             try {
                 let homeResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/siteInfo`, {}, { timeout: 60000 });
                 homeResult = homeResult?.data;
                 if (homeResult?.code === 1000) {
-                    const bannerImages = homeResult?.data?.bannerImages || [];
-                    // const imageList = _.flatten(_.map(homeList, 'images'));
-                    setImageHomeList(bannerImages);
                     const siteInfo = homeResult?.data
                     setSiteInfo(siteInfo);
                 }
             } catch (error) {
-                console.log(`ERROR when call get list bannerImages ${error.message} -- ${JSON.stringify(error)}`);
+                console.log(`ERROR when call get /siteInfo ${error.message} -- ${JSON.stringify(error)}`);
                 const errorSearch = [{ api: '/siteInfo (2)', error: error.message, data: JSON.stringify(error) }];
+                setErrorAPI(errorSearch);
+            }
+        }
+
+        // lấy danh sách sảnh và hình ảnh
+        const fetchHome = async () => {
+            try {
+                let homeResult = await axios.post(`${process.env.REACT_APP_URL_BACKEND || 'http://10.8.103.27:3000'}/room/search`, {}, { timeout: 60000 });
+                homeResult = homeResult?.data;
+                if (homeResult?.code === 1000) {
+                    const homeList = homeResult?.data?.rooms;
+                    // const imageList = _.flatten(_.map(homeList, 'images'));
+                    const imageList = _.map(homeList, (home) => ({
+                        id: home.id,
+                        images: home.images
+                    }));
+
+                    setImageHomeList(imageList);
+                }
+            } catch (error) {
+                console.log(`ERROR when call get list homestay ${error.message} -- ${JSON.stringify(error)}`);
+                const errorSearch = [{ api: '/room/search (2)', error: error.message, data: JSON.stringify(error) }];
                 setErrorAPI(errorSearch);
             }
         }
@@ -145,9 +165,9 @@ function Index() {
         if (_.isEmpty(imageHomeList)) {
             fetchHome();
         }
-        // if (_.isEmpty(siteInfo)) {
-        //     fetchInfo();
-        // }
+        if (_.isEmpty(siteInfo)) {
+            fetchSiteInfo();
+        }
     }, []);
 
     return (
@@ -159,7 +179,7 @@ function Index() {
                 <div className="container-fluid">
                     <div className="hp-room-items">
                         <div className="row">
-                            {!_.isEmpty(imageHomeList) ? <SlideImage imageHomeList={imageHomeList} /> : <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px' }}>
+                            {!_.isEmpty(imageHomeList) ? <SlideImageLink imageHomeList={imageHomeList} /> : <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px' }}>
                                 <ThemeProvider theme={theme}>
                                     <CircularProgress />
                                 </ThemeProvider>
